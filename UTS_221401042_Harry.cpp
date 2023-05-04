@@ -19,10 +19,18 @@ void lower_star(int i)
         }
 }
 
+// function untuk spasi
+void spaces(int i, int n)
+{
+    for (int j = 0; j < 2 * n - 2 * i - 2; j++)
+        {
+            cout << "  ";
+        }
+}
 
 int main(void)
 {
-    int n, b = 0;
+    int n;
 
     // minta input dari user
     cout << "Masukkan input: ";
@@ -33,36 +41,23 @@ int main(void)
     {
         // bintang kiri
         upper_star(i);
-
         // spasi tengah
-        for (int j = 0; 2 * b > j; j++)
-        {
-            cout << "  ";
-        }
-        
+        spaces(i,n);
         // bintang kanan
         upper_star(i);
 
-        b++;
         cout << endl;
     }
-    b = n-1;
+
     // bagian bawah segitiga
     for (int i = 1; i < n; i++)
     {
         // bintang kiri
         lower_star(i);
-
         // spasi tengah
-        for (int j = 0; j < 2 * n - 2 * i - 2; j++)
-        {
-            cout << "  ";
-        }
-
+        spaces(i,n);
         // bintang kanan
         lower_star(i);
-        
-        b--;
         cout << endl;
     }
 }
