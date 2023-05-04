@@ -1,6 +1,25 @@
 #include <iostream>
 using namespace std;
 
+// function untuk bintang bagian atas segitiga
+void upper_star(int i)
+{
+    for (int j = i; j > 0; j--)
+        {
+            cout << "* ";
+        }
+}
+
+// function untuk bintang bagian bawah segitiga
+void lower_star(int i)
+{
+    for (int j = 0; j < i ; j++)
+        {
+            cout << "* ";
+        }
+}
+
+
 int main(void)
 {
     int n, b = 0;
@@ -13,20 +32,17 @@ int main(void)
     for (int i = n - 1; i > 0; i--)
     {
         // bintang kiri
-        for (int j = i; j > 0; j--)
-        {
-            cout << "* ";
-        }
+        upper_star(i);
+
         // spasi tengah
         for (int j = 0; 2 * b > j; j++)
         {
             cout << "  ";
         }
+        
         // bintang kanan
-        for (int j = i; j > 0; j--)
-        {
-            cout << "* ";
-        }
+        upper_star(i);
+
         b++;
         cout << endl;
     }
@@ -35,20 +51,17 @@ int main(void)
     for (int i = 1; i < n; i++)
     {
         // bintang kiri
-        for (int j = 0; j < i ; j++)
-        {
-            cout << "* ";
-        }
+        lower_star(i);
+
         // spasi tengah
         for (int j = 0; j < 2 * n - 2 * i - 2; j++)
         {
             cout << "  ";
         }
+
         // bintang kanan
-        for (int j = 0; j < i; j++)
-        {
-            cout << "* ";
-        }
+        lower_star(i);
+        
         b--;
         cout << endl;
     }
